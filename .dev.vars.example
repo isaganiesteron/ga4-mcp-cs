@@ -1,0 +1,19 @@
+# Google Analytics 4 (GA4) credentials
+# Copy this file to .dev.vars and fill in your actual credentials
+
+# The TEAM OAuth client, same one used by google-ads-mcp-cs / gsc-mcp-server.
+GOOGLE_CLIENT_ID_TEAM=your_client_id_here
+GOOGLE_CLIENT_SECRET_TEAM=your_client_secret_here
+
+# The marketing-scoped refresh token (adwords + webmasters.readonly + analytics.readonly).
+# Do NOT use GOOGLE_REFRESH_TOKEN (webmasters + calendar, no analytics scope) or
+# GOOGLE_TEAM_REFRESH_TOKEN (Gmail scope) here — both 403 on the GA4 Data API.
+GOOGLE_MARKETING_REFRESH_TOKEN=your_marketing_refresh_token_here
+
+# Supabase, for resolving a client's GA4 property from master_clients.ga_property_id.
+SUPABASE_URL=your_supabase_project_url_here
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key_here
+
+# API key this Worker requires on every non-health-check request (X-API-Key or
+# Authorization: Bearer). Optional locally; required once deployed.
+API_KEY=your_api_key_here
